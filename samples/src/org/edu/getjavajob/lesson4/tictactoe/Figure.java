@@ -7,5 +7,6 @@ package org.edu.getjavajob.lesson4.tictactoe;
 public enum Figure {
     CROSS,
     ZERO,
-    NONE
+    NONE;
+    //TODO: fasdfsdf
 }

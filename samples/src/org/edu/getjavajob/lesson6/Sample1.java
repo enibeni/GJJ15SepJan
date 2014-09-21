@@ -6,7 +6,60 @@ import java.util.*;
  * @author Alex
  * @since 21.09.14
  */
-public class Sample1 {
+public class Sample1 extends ArrayList {
+    private static class Sample1Inner extends LinkedList {
+//        List list =new ArrayList<>();
+    }
+
+
+
+    //assing multiple elements
+    public static void main(String[] args) {
+//        Collection<String> list = new ArrayList<>();
+        List<String> list = new LinkedList<>();
+        list.iterator();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.addAll(Arrays.asList("1", "2", "3", "4"));//1
+
+
+
+        for (String s : list) {
+        }
+        for (int i = 0; i < list.size(); i++) {
+            list.get(i);
+        }
+        for (ListIterator<String> iterator = list.listIterator(); iterator.hasNext();) {
+            String next = iterator.next();
+            iterator.remove();
+            iterator.set(next.toUpperCase());
+        }
+
+        System.out.println(list);
+
+        Collections.addAll(list, "1", "2", "3");
+//        Collections.addAll(list, Arrays.<String>asList("1", "2", "3", "4")); //TODO: ???
+
+        Arrays.asList(new String[] {"1", "2", "3", "4"});
+
+
+
+        System.out.println(Arrays.toString(new String[][]{
+                 {"1", "2"},
+                 {"3", "4"}}));
+
+        //intializing double dimension array
+
+        int [][] array = new int[10][10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = new int[10];
+
+        }
+
+    }
+
     public static void main1(String[] args) {
         List<Integer> list = new ArrayList<>();
 
