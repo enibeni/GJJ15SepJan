@@ -9,4 +9,7 @@ public enum Figure {
     ZERO,
     NONE;
     //TODO: fasdfsdf
+
+
+
 }

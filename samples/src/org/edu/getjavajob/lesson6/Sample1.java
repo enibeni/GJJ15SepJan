@@ -12,6 +12,9 @@ public class Sample1 extends ArrayList {
     }
 
 
+    public static void main7(String[] args) {
+        String s1, s2;
+    }
 
     //assing multiple elements
     public static void main(String[] args) {
