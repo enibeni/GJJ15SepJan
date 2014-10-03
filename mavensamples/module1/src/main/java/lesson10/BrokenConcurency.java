@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class BrokenConcurency {
 //    private static AtomicInteger i = new AtomicInteger(0);
     private static int i = 0;
-    public static final int TIMES = 1_000_000;
+    public static final int TIMES = 1000000;
 
     public synchronized static void increment() {
 //        i.incrementAndGet();
@@ -19,7 +19,7 @@ public class BrokenConcurency {
     }
 
     public static int intcrementInThreads(int numThreads) {
-        List<Thread> threads = new ArrayList<>();
+        List<Thread> threads = new ArrayList<Thread>();
 
         for (int j = 0; j < numThreads; j++) {
             Thread nth = new Thread(new IncrementNtimes());
