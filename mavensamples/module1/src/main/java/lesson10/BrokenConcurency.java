@@ -15,6 +15,8 @@ public class BrokenConcurency {
 
     public synchronized static void increment() {
 //        i.incrementAndGet();
+//        one -= 10000;
+//        second += 10000;
         i++;
     }
 
