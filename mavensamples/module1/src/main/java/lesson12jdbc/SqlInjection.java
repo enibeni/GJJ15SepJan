@@ -30,6 +30,7 @@ public class SqlInjection {
         }
 
         //TODO: close propely
+
         rs.close();
         statement.close();
         connection.close();
