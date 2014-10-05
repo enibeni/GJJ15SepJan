@@ -14,18 +14,38 @@ public class SampleJdbc {
         final Properties connectionProps = new Properties();
         connectionProps.put("user", "user");
         connectionProps.put("password", "user");
-        final Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", connectionProps);
 
-        final Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("select * from forumuser");
-        while (rs.next()) {
-            System.out.println(rs.getString("LOGIN") + " " + rs.getString("EMAIL") + " " + rs.getDate("REGISTRATION"));
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet rs = null;
+
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", connectionProps);
+            try {
+                statement = connection.createStatement();
+                try {
+                    rs = statement.executeQuery("select * from forumuser");
+                    while (rs.next()) {
+                        System.out.println(rs.getString("LOGIN") + " " + rs.getString("EMAIL") + " " + rs.getDate("REGISTRATION"));
+                    }
+
+                } finally {
+                    if (rs != null) {
+                        rs.close();
+                    }
+
+                }
+            } finally {
+                if (statement != null) {
+                    statement.close();
+                }
+            }
+        } finally {
+            if (connection != null) {
+                connection.close();
+            }
+
         }
-
-        //TODO: close propely
-        rs.close();
-        statement.close();
-        connection.close();
 
 
     }
