@@ -12,7 +12,7 @@ public class StringInternDemo {
     public static void main(String[] args) {
         List<String> strings = new ArrayList<>();
         for (int i = 0; i < STRING_COUNT; i++) {
-              strings.add(randomString(2));
+              strings.add(randomString(2));   //heap += 1 string
         }
         //show count of distinct strings
         Set<String> distinctStrings = new HashSet<>();
