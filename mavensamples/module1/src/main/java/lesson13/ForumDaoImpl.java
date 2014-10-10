@@ -45,7 +45,8 @@ public class ForumDaoImpl extends NamedParameterJdbcDaoSupport implements ForumD
         public ForumUser mapRow(ResultSet rs, int i) throws SQLException {
             final ForumUser user = new ForumUser();
             user.setUsername(rs.getString("LOGIN"));
-
+            user.setEmail(rs.getString("EMAIL"));
+            //TODO: map all columns
             return user;
         }
     };

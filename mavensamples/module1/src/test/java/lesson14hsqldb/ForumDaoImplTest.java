@@ -1,6 +1,8 @@
 package lesson14hsqldb;
 
 import lesson13.ForumDao;
+import lesson13.ForumUser;
+import lesson13.UserNotFoundException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +25,17 @@ public class ForumDaoImplTest {
     public void testGetAll() throws Exception {
 //        ClassLoader l1 = ForumDao.class.getClassLoader();
         assertEquals(3, forumDao.getAllUsers().size());
+    }
+
+    @Test(expected = UserNotFoundException.class)
+    public void testGetByLoginNotFound() throws Exception {
+        forumDao.getUserByLogin("not_existent");
+    }
+
+    @Test
+    public void testGetByLoginFound() throws Exception {
+        ForumUser user = forumDao.getUserByLogin("akiyko");
+        assertEquals("a@k.m.ru", user.getEmail());
+        assertEquals("akiyko", user.getUsername());
     }
 }
