@@ -7,12 +7,14 @@ import java.util.*;
  * @since 07.10.14
  */
 public class StringInternDemo {
-    public static final int STRING_COUNT = 10000;
+    public static final int STRING_COUNT = 100000;
+
+    //var1. heap 2*3*100000
 
     public static void main(String[] args) {
         List<String> strings = new ArrayList<>();
         for (int i = 0; i < STRING_COUNT; i++) {
-              strings.add(randomString(2));   //heap += 1 string
+              strings.add(randomString(3).intern());
         }
         //show count of distinct strings
         Set<String> distinctStrings = new HashSet<>();
@@ -53,7 +55,7 @@ public class StringInternDemo {
 
         @Override
         public int hashCode() {
-            return 1;
+            return value.hashCode();
         }
     }
 
