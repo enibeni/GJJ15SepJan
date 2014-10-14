@@ -3,6 +3,7 @@ package lesson14hsqldb;
 import lesson13.ForumDao;
 import lesson13.ForumUser;
 import lesson13.UserNotFoundException;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,14 @@ public class ForumDaoImplTest {
     @Autowired
     ForumDao forumDao;
 
+    @BeforeClass
+    public static void setUp() {
+        //init etc..
+    }
+
     @Test
-    public void testGetAll() throws Exception {
-//        ClassLoader l1 = ForumDao.class.getClassLoader();
+    public void testGetAll(Integer i) throws Exception {
+        ClassLoader l1 = ForumDao.class.getClassLoader();
         assertEquals(3, forumDao.getAllUsers().size());
     }
 

@@ -60,7 +60,7 @@ public class ForumUser {
         return rating;
     }
 
-    public void setRating(Integer rating) {
+    public void setRating(Integer rating, Integer rating2) {
         this.rating = rating;
     }
 

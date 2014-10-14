@@ -15,7 +15,8 @@ public class SqlInjection {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         // Prior JDBC 4.0
-        //Class.forName("com.mysql.jdbc.Driver");
+//        Class.forName("com.mysql.jdbc.Driver");
+
         final Properties connectionProps = new Properties();
         connectionProps.put("user", "user");
         connectionProps.put("password", "user");

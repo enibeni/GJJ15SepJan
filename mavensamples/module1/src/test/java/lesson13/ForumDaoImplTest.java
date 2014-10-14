@@ -7,6 +7,7 @@ import org.junit.Test;
 import javax.sql.DataSource;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * @author Alex
@@ -37,5 +38,12 @@ public class ForumDaoImplTest {
     public void testGetByIdUserFound() throws Exception {
         assertEquals("akiyko", forumDao.getUserByLogin("akiyko").getUsername());
         System.out.println(forumDao.getUserByLogin("akiyko"));
+    }
+
+    @Test()
+    public void testInsertTheme() throws Exception {
+        Theme actual = forumDao.addTheme(new Theme(null, "Motorola"));
+        assertEquals("Motorola", actual.getName());
+        assertNotNull(actual.getId());
     }
 }
