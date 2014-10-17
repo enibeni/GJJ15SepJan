@@ -65,4 +65,15 @@ public class Student {
     public void setGroup(Group group) {
         this.group = group;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthDate=" + birthDate +
+                ", group=" + group +
+                '}';
+    }
 }

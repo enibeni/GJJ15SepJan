@@ -16,7 +16,7 @@ public interface StudentDao {
      */
     void addStudent(Student student);
 
-    Student findById(long id);
+    Student findById(long id) throws NotFoundException;
 
     Set<Student> findByLastName(String lastName);
 
