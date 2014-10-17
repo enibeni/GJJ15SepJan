@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNotNull;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext-test.xml"})
-public class ScheduleDaoImplTest {
+public class StudentDaoImplTest {
     @Autowired
     private StudentDao dao;
 
