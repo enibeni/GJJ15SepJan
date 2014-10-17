@@ -12,5 +12,7 @@ public interface ForumDao {
     ForumUser getUserByLogin(String login) throws UserNotFoundException;
     Theme addTheme(Theme theme);
     //modification section
-//    void insertUser();
+//    void addUser();
+//    void addSynonyms(Word word, Word synonym)  ;
+//    Set<Word> synonyms;
 }
